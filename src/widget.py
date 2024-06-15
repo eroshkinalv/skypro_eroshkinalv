@@ -1,11 +1,8 @@
-import datetime
-
-
 def get_data(date: str) -> str:
     """Преобразует дату в формат DD.MM.YYYY"""
 
-    date_only = datetime.datetime(int(date[:4]), int(date[5:7]), int(date[9:10]))
-    date_format = date_only.strftime("%d.%m.%y")
+    date_only = date[:10].split("-")
+    date_format = ".".join(date_only[::-1])
 
     return date_format
 
