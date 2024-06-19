@@ -24,8 +24,8 @@ pip install -r requirements.txt
 
 ## Документация:
 
-Для получения дополнительной информации обратитесь к [папки с документацией пока нет](docs/README.md).
+Для получения дополнительной информации обратитесь к [документации](docs/README.md).
 
 ## Лицензия:
 
-Этот проект лицензирован по [лицензии](https://internationalwealth.info/wp-content/uploads/2021/09/Chto-takoe-licenzija-dlja-biznesa.jpg).
+Этот проект лицензирован по [лицензии](LICENSE.txt).
