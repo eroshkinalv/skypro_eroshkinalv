@@ -1,16 +1,13 @@
-import datetime  # не зря же импорты проходили
+import datetime
 
 
 def get_data(date: str) -> str:
     """Преобразует дату в формат DD.MM.YYYY"""
 
-    date_only = datetime.datetime(int(date[:4]), int(date[5:7]), int(date[9:10]))
-    date_format = date_only.strftime("%d.%m.%y")
+    date_only = datetime.datetime(int(date[:4]), int(date[5:7]), int(date[8:10]))
+    date_format = date_only.strftime("%d.%m.%Y")
 
     return date_format
-
-
-# print(get_data("2018-07-11T02:26:18.671407"))
 
 
 def mask_account_card(info: str) -> str:
@@ -30,8 +27,3 @@ def mask_account_card(info: str) -> str:
         masked_account_card = card_type + " " + get_mask_account(card_number)
 
     return masked_account_card
-
-
-# print(mask_account_card("Visa Platinum 7000 7922 8960 6361"))
-# print(mask_account_card("Maestro 7000 7922 8960 6361"))
-# print(mask_account_card("Счет 73654108430135874305"))
