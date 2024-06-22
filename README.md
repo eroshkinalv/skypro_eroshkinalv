@@ -29,11 +29,3 @@ pip install -r requirements.txt
 ## Лицензия:
 
 Этот проект лицензирован по [лицензии](https://internationalwealth.info/wp-content/uploads/2021/09/Chto-takoe-licenzija-dlja-biznesa.jpg).
-
-## Тестирование:
-
-Данный проект покрыт юнит-тестами. 
-Для их запуска выполните команду: 
-```
-pytest
-```
