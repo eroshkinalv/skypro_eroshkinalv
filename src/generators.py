@@ -35,6 +35,6 @@ def card_number_generator(start: int, stop: int) -> Generator:
     for n in new_numbers:
         yield n[:4] + " " + n[4:8] + " " + n[8:12] + " " + n[12:]
 
-
-# for card_number in card_number_generator(1, 5):
-#     print(card_number)
+if __name__ == '__generators__':
+    for card_number in card_number_generator(1, 5):
+        print(card_number)
