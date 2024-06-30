@@ -4,27 +4,16 @@ from typing import Generator, List
 def filter_by_currency(transactions_list: List, currency: str) -> Generator:
     """Выдает по очереди операции, в которых указана заданная валюта"""
 
-    if currency != "руб.":
-        filtered_list = list(x for x in transactions_list if x["operationAmount"]["currency"]["code"] == currency)
-
-    else:
-        filtered_list = list(x for x in transactions_list if x["operationAmount"]["currency"]["name"] == currency)
-
-    index = 0
-
-    while True:
-        yield filtered_list[index]
-        index += 1
+    for transaction in transactions_list:
+        if transaction["operationAmount"]["currency"]["code"] == currency:
+            yield transaction
 
 
 def transaction_descriptions(transactions_list: List) -> Generator:
     """Возвращает описание каждой операции по очереди"""
 
-    tr_descriptions = list(x["description"] for x in transactions_list)
-    index = 0
-    while True:
-        yield tr_descriptions[index]
-        index += 1
+    for transaction in transactions_list:
+        yield transaction.get("description")
 
 
 def card_number_generator(start: int, stop: int) -> Generator:
@@ -34,8 +23,3 @@ def card_number_generator(start: int, stop: int) -> Generator:
 
     for n in new_numbers:
         yield n[:4] + " " + n[4:8] + " " + n[8:12] + " " + n[12:]
-
-
-if __name__ == '__generators__':
-    for card_number in card_number_generator(1, 5):
-        print(card_number)

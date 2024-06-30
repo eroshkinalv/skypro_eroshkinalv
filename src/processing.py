@@ -12,9 +12,6 @@ def filter_by_state(dict_list: List, state: Optional[str] = "EXECUTED") -> List:
 def sort_by_date(dict_list: List, descending_order: Optional[bool] = True) -> List:
     """Сортирует список словарей по доте(date)"""
 
-    if descending_order is False:
-        sorted_dict_list = sorted(dict_list, key=lambda d: d["date"])
-    else:
-        sorted_dict_list = sorted(dict_list, key=lambda d: d["date"], reverse=True)
+    sorted_dict_list = sorted(dict_list, key=lambda d: d["date"], reverse=descending_order)
 
     return sorted_dict_list
