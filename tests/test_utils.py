@@ -12,20 +12,9 @@ def test_json_file_to_python_empty_list():
     assert json_file_to_python(r'..\data\operations.json') == []
 
 
-def test_json_file_to_python_not_list():
+def test_json_file_to_python_not_list(json_file_dict):
 
-    mock_json = Mock(return_value={
-        "id": 587085106,
-        "state": "EXECUTED",
-        "date": "2018-03-23T10:45:06.972075",
-        "operationAmount": {
-            "amount": "48223.05",
-            "currency": {
-                "name": "руб.",
-                "code": "RUB"}
-        },
-        "description": "Открытие вклада",
-        "to": "Счет 41421565395219882431"})
+    mock_json = Mock(return_value=json_file_dict)
 
     json.load = mock_json
 
