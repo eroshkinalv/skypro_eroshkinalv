@@ -52,9 +52,9 @@ def json_csv_excel_file_to_python(file_name: str) -> Any:
 
 if __name__ == '__main__':
 
-    # print(json_csv_excel_file_to_python(r'..\data\transactions.csv'))
+    print(json_csv_excel_file_to_python(r'..\data\transactions.csv'))
     print(json_csv_excel_file_to_python(r'..\data\transactions_excel.xlsx'))
-    # print(json_csv_excel_file_to_python(r'..\data\operations.json'))
-    # print(json_csv_excel_file_to_python('transactions.csv'))
-    # print(json_csv_excel_file_to_python('transactions_excel.xlsx'))
-    # print(json_csv_excel_file_to_python('operations.json'))
+    print(json_csv_excel_file_to_python(r'..\data\operations.json'))
+    print(json_csv_excel_file_to_python('transactions.csv'))
+    print(json_csv_excel_file_to_python('transactions_excel.xlsx'))
+    print(json_csv_excel_file_to_python('operations.json'))
