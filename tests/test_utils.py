@@ -1,5 +1,4 @@
 import json
-import pandas as pd
 from unittest.mock import Mock, patch
 
 from src.utils import json_csv_excel_file_to_python
