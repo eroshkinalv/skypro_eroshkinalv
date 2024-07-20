@@ -1,3 +1,4 @@
+from src.generators import search_dict_by_description, get_transactions_category_dict
 from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
 
@@ -29,3 +30,13 @@ def test_card_number_generator():
     assert next(numbers) == '0000 0000 0000 0003'
     assert next(numbers) == '0000 0000 0000 0004'
     assert next(numbers) == '0000 0000 0000 0005'
+
+
+def test_search_dict_by_description(transactions, transactions_result):
+    result = search_dict_by_description(transactions, "организация")
+    assert result == transactions_result
+
+
+def test_get_transactions_category_dict(transactions):
+    result = get_transactions_category_dict(transactions, ["Перевод организации", "Перевод со счета на счет"])
+    assert result == {"Перевод организации": 2, "Перевод со счета на счет": 2}
