@@ -1,10 +1,11 @@
-import json
 import csv
-import pandas as pd
+import json
 import logging
 from typing import Any
 
-logging.basicConfig(filename=r'..\logs\utils.log', encoding='utf-8',
+import pandas as pd
+
+logging.basicConfig(filename=r'C:\Users\liudo\PycharmProjects\skypro_eroshkinalv\logs\utils.log', encoding='utf-8',
                     filemode='w',
                     format='%(asctime)s, %(filename)s, %(levelname)s: %(message)s',
                     level=logging.INFO)
